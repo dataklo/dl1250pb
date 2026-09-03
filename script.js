@@ -75,7 +75,7 @@ function parseIcs(source) {
     const date = `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}`;
     const time = start.includes('T') ? `${start.slice(9, 11)}:${start.slice(11, 13)}` : '';
     const endTime = end.includes('T') ? `${end.slice(9, 11)}:${end.slice(11, 13)}` : '';
-    return { date, titleDe: value('SUMMARY') || 'Aktivierung', titleEn: value('SUMMARY') || 'Activation', details: [time && endTime ? `${time}–${endTime}` : time, 'Europe/Berlin'].filter(Boolean).join(' · ') };
+    return { date, titleDe: value('SUMMARY') || 'Aktivierung', titleEn: value('SUMMARY') || 'Activation', details: [time && endTime ? `${time}–${endTime}` : time, 'UTC'].filter(Boolean).join(' · ') };
   }).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date));
 }
 
