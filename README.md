@@ -17,9 +17,9 @@ Anschließend `http://localhost:8080` öffnen.
 - Die DCL-Next-Widget-URLs für den On-Air- und LoTW-Uploadstatus stehen in den beiden `iframe`-Elementen im Abschnitt `#live` in `index.html`.
 - Der DN9DKN-OQRS-Link steht im Abschnitt `#qsl`.
 - Die Operatoren werden als Karten im Element `#operator-list` in `index.html` gepflegt.
-- QSL-Angaben und Adresse stehen im Abschnitt `#qsl`.
+- Die QSL-Angaben stehen im Abschnitt `#qsl`; die nicht indexierbare Anschrift steht in `qsl-address.html`.
 - Deutsche und englische Texte werden über `data-de` und `data-en` direkt an den jeweiligen Elementen gepflegt.
-- Termine werden im Array `events` am Anfang von `script.js` gepflegt. Ein auskommentiertes Beispiel zeigt das benötigte Format.
+- Termine werden in `ics/dl1250pb.ics` gepflegt und beim Laden der Seite automatisch in den Kalender übernommen.
 
 ## Veröffentlichung bei Hetzner Webhosting S
 
@@ -30,6 +30,9 @@ Für die Website werden nur diese Dateien benötigt:
 - `index.html`
 - `styles.css`
 - `script.js`
+- `qsl-address.html`
+- `robots.txt`
+- der Ordner `ics`
 
 Nach dem Upload die Domain aufrufen und prüfen, ob die Startseite sowie die DCL-Next-Widgets geladen werden. Die Dateien verwenden relative Pfade und funktionieren daher sowohl auf einer eigenen Domain als auch in einem Unterverzeichnis.
 

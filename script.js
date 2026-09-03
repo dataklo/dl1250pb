@@ -2,10 +2,7 @@ const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('#main-nav');
 const languageToggle = document.querySelector('.language-toggle');
 
-// Neue Termine hier ergänzen. Datum immer im Format YYYY-MM-DD eintragen.
-const events = [
-  // { date: '2027-01-01', titleDe: 'Aktivierung', titleEn: 'Activation', details: 'SSB · 40 m' },
-];
+let events = [];
 
 let calendarDate = new Date(2027, 0, 1);
 
@@ -19,8 +16,6 @@ nav.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', 'false');
   nav.classList.remove('open');
 });
-
-document.querySelector('#year').textContent = new Date().getFullYear();
 
 const setLanguage = (language) => {
   document.documentElement.lang = language;
@@ -43,6 +38,40 @@ languageToggle.addEventListener('click', () => {
 });
 
 setLanguage(localStorage.getItem('dl1250pb-language') === 'en' ? 'en' : 'de');
+
+loadEvents();
+
+async function loadEvents() {
+  try {
+    const response = await fetch('ics/dl1250pb.ics');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    events = parseIcs(await response.text());
+  } catch (error) {
+    console.error('Kalenderdatei konnte nicht geladen werden:', error);
+  }
+  renderCalendar();
+}
+
+function parseIcs(source) {
+  const unfolded = source.replace(/\r?\n[ \t]/g, '');
+  return unfolded.split(/BEGIN\\?:VEVENT/).slice(1).map((block) => {
+    const value = (property) => {
+      const match = block.match(new RegExp(`(?:^|\\r?\\n)${property}(?:;[^:\\r\\n]*)?\\\\?:([^\\r\\n]*)`));
+      return match ? match[1].trim().replace(/\\([,;\\])/g, '$1') : '';
+    };
+    const start = value('DTSTART');
+    const end = value('DTEND');
+    if (!/^\d{8}T?\d*/.test(start)) return null;
+    const date = `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}`;
+    const time = start.includes('T') ? `${start.slice(9, 11)}:${start.slice(11, 13)}` : '';
+    const endTime = end.includes('T') ? `${end.slice(9, 11)}:${end.slice(11, 13)}` : '';
+    return { date, titleDe: value('SUMMARY') || 'Aktivierung', titleEn: value('SUMMARY') || 'Activation', details: [time && endTime ? `${time}–${endTime}` : time, 'Europe/Berlin'].filter(Boolean).join(' · ') };
+  }).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date));
+}
+
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[character]);
+}
 
 function renderCalendar() {
   const language = document.documentElement.lang;
@@ -69,7 +98,7 @@ function renderCalendar() {
   document.querySelector('#calendar-grid').innerHTML = cells.join('');
 
   document.querySelector('#calendar-events').innerHTML = monthEvents.length
-    ? monthEvents.map((event) => `<article><time datetime="${event.date}">${new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' }).format(new Date(`${event.date}T12:00:00`))}</time><div><strong>${language === 'en' ? event.titleEn : event.titleDe}</strong><span>${event.details}</span></div></article>`).join('')
+    ? monthEvents.map((event) => `<article><time datetime="${event.date}">${new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' }).format(new Date(`${event.date}T12:00:00`))}</time><div><strong>${escapeHtml(language === 'en' ? event.titleEn : event.titleDe)}</strong><span>${escapeHtml(event.details)}</span></div></article>`).join('')
     : `<p class="no-events">${language === 'en' ? 'No activations have been announced for this month yet.' : 'Für diesen Monat wurden noch keine Aktivierungen angekündigt.'}</p>`;
 }
 
