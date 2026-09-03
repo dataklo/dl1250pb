@@ -14,7 +14,7 @@ Anschließend `http://localhost:8080` öffnen.
 
 ## Inhalte pflegen
 
-- Die vorübergehend verwendeten DN9DKN-Wavelog-Widget-URLs stehen in den beiden `iframe`-Elementen im Abschnitt `#live` in `index.html`.
+- Die DCL-Next-Widget-URLs für den On-Air- und LoTW-Uploadstatus stehen in den beiden `iframe`-Elementen im Abschnitt `#live` in `index.html`.
 - Der DN9DKN-OQRS-Link steht im Abschnitt `#qsl`.
 - Die Operatoren werden als Karten im Element `#operator-list` in `index.html` gepflegt.
 - QSL-Angaben und Adresse stehen im Abschnitt `#qsl`.
@@ -31,6 +31,6 @@ Für die Website werden nur diese Dateien benötigt:
 - `styles.css`
 - `script.js`
 
-Nach dem Upload die Domain aufrufen und prüfen, ob die Startseite sowie die Wavelog-Widgets geladen werden. Die Dateien verwenden relative Pfade und funktionieren daher sowohl auf einer eigenen Domain als auch in einem Unterverzeichnis.
+Nach dem Upload die Domain aufrufen und prüfen, ob die Startseite sowie die DCL-Next-Widgets geladen werden. Die Dateien verwenden relative Pfade und funktionieren daher sowohl auf einer eigenen Domain als auch in einem Unterverzeichnis.
 
-> Hinweis: Die Schriftarten und Wavelog-Widgets werden von externen Servern geladen. Besucher müssen diese Server erreichen können; auf dem Hetzner-Webspace ist dafür keine zusätzliche Konfiguration erforderlich.
+> Hinweis: Die Schriftarten und DCL-Next-Widgets werden von externen Servern geladen. Besucher müssen diese Server erreichen können; auf dem Hetzner-Webspace ist dafür keine zusätzliche Konfiguration erforderlich.
