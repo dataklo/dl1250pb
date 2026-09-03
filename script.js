@@ -92,6 +92,8 @@ function renderCalendar() {
     const date = new Date(`${event.date}T12:00:00`);
     return date.getFullYear() === year && date.getMonth() === month;
   });
+  const firstDayOfMonth = `${year}-${String(month + 1).padStart(2, '0')}-01`;
+  const upcomingEvents = events.filter((event) => event.date >= firstDayOfMonth);
   const eventDates = new Set(monthEvents.map((event) => Number(event.date.slice(-2))));
   const weekdays = language === 'en' ? ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'] : ['MO', 'DI', 'MI', 'DO', 'FR', 'SA', 'SO'];
   document.querySelector('.calendar-weekdays').innerHTML = weekdays.map((day) => `<span>${day}</span>`).join('');
@@ -107,9 +109,9 @@ function renderCalendar() {
   }
   document.querySelector('#calendar-grid').innerHTML = cells.join('');
 
-  document.querySelector('#calendar-events').innerHTML = monthEvents.length
-    ? monthEvents.map((event) => `<article><time datetime="${event.date}">${new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short' }).format(new Date(`${event.date}T12:00:00`))}</time><div><strong>${escapeHtml(language === 'en' ? event.titleEn : event.titleDe)}</strong><span>${escapeHtml(event.details)}</span></div></article>`).join('')
-    : `<p class="no-events">${language === 'en' ? 'No activations have been announced for this month yet.' : 'Für diesen Monat wurden noch keine Aktivierungen angekündigt.'}</p>`;
+  document.querySelector('#calendar-events').innerHTML = upcomingEvents.length
+    ? upcomingEvents.map((event) => `<article><time datetime="${event.date}">${new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(`${event.date}T12:00:00`))}</time><div><strong>${escapeHtml(language === 'en' ? event.titleEn : event.titleDe)}</strong><span>${escapeHtml(event.details)}</span></div></article>`).join('')
+    : `<p class="no-events">${language === 'en' ? 'No further activations have been announced yet.' : 'Es wurden noch keine weiteren Aktivierungen angekündigt.'}</p>`;
 }
 
 document.querySelector('#calendar-prev').addEventListener('click', () => {
@@ -121,3 +123,21 @@ document.querySelector('#calendar-next').addEventListener('click', () => {
   calendarDate = new Date(calendarDate.getFullYear(), calendarDate.getMonth() + 1, 1);
   renderCalendar();
 });
+
+
+const operatorList = document.querySelector('#operator-list');
+const operatorStep = () => (operatorList.querySelector('.operator')?.getBoundingClientRect().width || 298) + 22;
+const scrollOperators = (direction) => operatorList.scrollBy({ left: direction * operatorStep(), behavior: 'smooth' });
+
+document.querySelector('.operator-prev').addEventListener('click', () => scrollOperators(-1));
+document.querySelector('.operator-next').addEventListener('click', () => scrollOperators(1));
+
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const operatorAutoscroll = window.setInterval(() => {
+    const atEnd = operatorList.scrollLeft + operatorList.clientWidth >= operatorList.scrollWidth - 2;
+    operatorList.scrollTo({ left: atEnd ? 0 : operatorList.scrollLeft + operatorStep(), behavior: 'smooth' });
+  }, 4500);
+  const pauseAutoscroll = () => window.clearInterval(operatorAutoscroll);
+  operatorList.addEventListener('pointerenter', pauseAutoscroll, { once: true });
+  operatorList.addEventListener('focusin', pauseAutoscroll, { once: true });
+}
