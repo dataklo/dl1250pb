@@ -29,7 +29,6 @@ const setLanguage = (language) => {
   languageToggle.setAttribute('aria-pressed', String(english));
   languageToggle.setAttribute('aria-label', english ? 'Webseite auf Deutsch umschalten' : 'Switch website to English');
   document.title = english ? 'DL1250PB · Paderborn on the air' : 'DL1250PB · Paderborn auf Sendung';
-  localStorage.setItem('dl1250pb-language', language);
   renderCalendar();
 };
 
@@ -37,7 +36,18 @@ languageToggle.addEventListener('click', () => {
   setLanguage(document.documentElement.lang === 'de' ? 'en' : 'de');
 });
 
-setLanguage(localStorage.getItem('dl1250pb-language') === 'en' ? 'en' : 'de');
+setLanguage('de');
+
+document.querySelectorAll('.embed-consent').forEach((placeholder) => {
+  placeholder.querySelector('button').addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.title = placeholder.dataset[document.documentElement.lang === 'en' ? 'titleEn' : 'titleDe'];
+    iframe.src = placeholder.dataset.embed;
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    placeholder.replaceWith(iframe);
+  });
+});
 
 loadEvents();
 
