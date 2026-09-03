@@ -67,16 +67,19 @@
           <div class="calendar-weekdays" aria-hidden="true"></div>
           <div class="calendar-grid" id="calendar-grid"></div>
         </div>
-        <aside class="event-list"><p class="event-list-label" data-de="TERMINE IM MONAT" data-en="EVENTS THIS MONTH">TERMINE IM MONAT</p><div id="calendar-events" aria-live="polite"></div></aside>
+        <aside class="event-list"><p class="event-list-label" data-de="DIE FOLGENDEN TERMINE" data-en="UPCOMING EVENTS">DIE FOLGENDEN TERMINE</p><div id="calendar-events" aria-live="polite"></div></aside>
       </div>
     </section>
 
     <section class="operators section" id="operatoren">
       <div class="section-label" data-de="04 / DAS TEAM" data-en="04 / THE TEAM">04 / DAS TEAM</div>
       <div class="operators-heading"><div><p class="eyebrow ink" data-de="<span></span> GEMEINSAM AUF SENDUNG" data-en="<span></span> ON THE AIR TOGETHER"><span></span> GEMEINSAM AUF SENDUNG</p><h2 data-de="Die Operatoren hinter<br><em>dem Rufzeichen.</em>" data-en="The operators behind<br><em>the callsign.</em>">Die Operatoren hinter<br><em>dem Rufzeichen.</em></h2></div></div>
-      <div class="operator-grid" id="operator-list">
-        <article class="operator"><span>OPERATOR 01</span><h3>DN9DKN</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>10 m – 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
-        <article class="operator"><span>OPERATOR 02</span><h3>DO6NIK</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m · 15 m · 10 m · 2 m · 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
+      <div class="operator-carousel">
+        <div class="operator-controls"><button class="operator-prev" type="button" aria-label="Vorherige Operatoren">←</button><button class="operator-next" type="button" aria-label="Nächste Operatoren">→</button></div>
+        <div class="operator-grid" id="operator-list" tabindex="0">
+          <article class="operator"><span>OPERATOR 01</span><div class="operator-call">DN9DKN</div><h3>DN9DKN</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>10 m – 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
+          <article class="operator"><span>OPERATOR 02</span><div class="operator-call">DO6NIK</div><h3>DO6NIK</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m · 15 m · 10 m · 2 m · 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
+        </div>
       </div>
     </section>
 
