@@ -19,14 +19,19 @@ Anschließend `http://localhost:8080` öffnen.
 - Die DCL-Next-Widget-URLs für den On-Air- und LoTW-Uploadstatus stehen in den beiden `iframe`-Elementen im Abschnitt `#live` in `index.html`.
 - Der DN9DKN-OQRS-Link steht im Abschnitt `#qsl`.
 - Die Operatoren werden als Karten im Element `#operator-list` in `index.html` gepflegt.
+- Die Clubstationen stehen als Karten im gleichen Design direkt darunter in `#clubstation-list`. Bänder und Betriebsarten nur ergänzen, wenn sie für die jeweilige Station bekannt sind.
 - Die QSL-Angaben stehen im Abschnitt `#qsl`; die nicht indexierbare Anschrift steht in `qsl-address.html`.
 - Deutsche und englische Texte werden über `data-de` und `data-en` direkt an den jeweiligen Elementen gepflegt.
 - Der Ordner `ics` wird extern automatisch aktualisiert. Termine im externen Quellkalender pflegen, nicht in der generierten Datei `ics/dl1250pb.ics`. Die Website fragt sie beim Laden mit Cache-Revalidierung ab und übernimmt sie in den Kalender.
 - Die ICS-Terminbeschreibung (`DESCRIPTION`) wird unter dem Operator und der Uhrzeit als Text angezeigt. Eine Angabe wie `80m, SSB` kann im externen Kalender in die Beschreibung geschrieben werden und erscheint dann auch auf der Website. Zeilenumbrüche bleiben erhalten; HTML wird als Text dargestellt.
 - Bandangaben wie `80m`, `20 m` oder `70 cm` aus der Beschreibung erscheinen zusätzlich direkt im jeweiligen Tagesfeld des Monatskalenders. Mehrere Bänder werden zusammengeführt; ohne Bandangabe wird kein Band ergänzt.
 - Ein Kalendereintrag legt kein Band und keine QRG fest: Der jeweilige Operator wählt beides frei. Angaben in der Beschreibung dienen der Planung und können sich ändern.
+- Die Übersicht `#next-activation` am Seitenanfang verwendet dieselbe ICS-Quelle und zeigt einen laufenden Kalendereintrag oder die nächste geplante Aktivierung. Abgelaufene und abgesagte Termine werden nicht als nächste Aktivierung ausgewählt; ein laufender Kalendereintrag ist keine Live-On-Air-Bestätigung.
+- Uhrzeiten werden nach UTC umgerechnet und entsprechend beschriftet. `TZID`-Angaben wie `Europe/Berlin` berücksichtigen Sommer- und Winterzeit; für Termine ohne Zeitzonenangabe gilt `X-WR-TIMEZONE` oder standardmäßig `Europe/Berlin`. Ganztägige Termine erscheinen als „Ganztägig“.
 - Der Bildslider im Jubiläumsbereich steht in `.city-gallery-track` in `index.html`. Für weitere Bilder ein `figure.city-slide` ergänzen: Bild unter `img/` ablegen und Dateipfad, Alternativtexte, Bildtitel und Quellenlink anpassen. Die Pfeilbedienung berücksichtigt alle Karten automatisch; Wischen und die Pfeiltasten bei fokussiertem Slider sind ebenfalls möglich.
 - Die Sliderbilder erhalten die gleiche Höhe wie die QSL-Karte; ihre Breite ergibt sich aus dem jeweiligen Seitenverhältnis. Die Bilder werden weder beschnitten noch gestreckt.
+- Die kurzen Bildtexte stehen jeweils in der `figcaption` unter dem Foto. Die verlinkten Wikipedia-Artikel dienen als weiterführende Quellen.
+- Die drei datierten Meldungen in `#aktuelles` werden in `index.html` gepflegt. Neue Beiträge mit einem tatsächlichen Veröffentlichungsdatum, überprüfbaren Angaben und deutscher sowie englischer Fassung ergänzen.
 - Der QSL-Ablauf und die Erklärungen zu OQRS/SAE stehen in `#qsl`, die aufklappbaren häufigen Fragen in `#faq`. Auch neue Texte jeweils auf Deutsch und Englisch pflegen.
 
 ## Veröffentlichung bei Hetzner Webhosting S
@@ -39,6 +44,8 @@ Für die Website werden nur diese Dateien benötigt:
 - `styles.css`
 - `gallery.css`
 - `info.css`
+- `activation.css`
+- `content.css`
 - `script.js`
 - `qsl-address.html`
 - `impressum.html`

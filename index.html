@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DL1250PB – das Amateurfunk-Sonderrufzeichen zum 1250-jährigen Stadtjubiläum Paderborns.">
   <title>DL1250PB · Paderborn auf Sendung</title>
-  <link rel="stylesheet" href="styles.css?v=20261023-calendar-bands">
-  <link rel="stylesheet" href="gallery.css">
-  <link rel="stylesheet" href="info.css">
+  <link rel="stylesheet" href="styles.css?v=20261023-launch-content">
+  <link rel="stylesheet" href="gallery.css?v=20261023-launch-content">
+  <link rel="stylesheet" href="info.css?v=20261023-launch-content">
+  <link rel="stylesheet" href="content.css?v=20261023-launch-content">
+  <link rel="stylesheet" href="activation.css?v=20261023-launch-content">
 </head>
 <body>
   <header class="site-header">
@@ -40,6 +42,17 @@
       <div class="scroll-note">SCROLL TO EXPLORE <span>↓</span></div>
     </section>
 
+    <section class="activation-section" aria-labelledby="next-activation-title">
+      <div class="activation-heading">
+        <p class="eyebrow coral" data-de="<span></span> AUS DEM KALENDER" data-en="<span></span> FROM THE CALENDAR"><span></span> AUS DEM KALENDER</p>
+        <h2 id="next-activation-title" data-de="Nächste geplante Aktivierung" data-en="Next planned activation">Nächste geplante Aktivierung</h2>
+        <p class="activation-note" data-de="Die Termine kommen aus unserem Kalender. Band und QRG wählt der Operator frei; auch spontane Aktivierungen sind möglich." data-en="Events come from our calendar. Operators choose the band and frequency freely; spontaneous activations are also possible.">Die Termine kommen aus unserem Kalender. Band und QRG wählt der Operator frei; auch spontane Aktivierungen sind möglich.</p>
+      </div>
+      <div id="next-activation" aria-live="polite" aria-atomic="true">
+        <p class="next-activation-empty">Geplante Aktivierungen werden geladen…</p>
+      </div>
+    </section>
+
     <section class="intro section" id="jubilaeum">
       <div class="section-label" data-de="01 / DAS JUBILÄUM" data-en="01 / THE ANNIVERSARY">01 / DAS JUBILÄUM</div>
       <div class="intro-content">
@@ -60,18 +73,28 @@
         <div class="city-gallery-track" id="city-gallery-track" tabindex="0" aria-labelledby="city-gallery-heading">
           <figure class="city-slide">
             <img src="img/3hasen.jpg" width="7036" height="4691" alt="Dreihasenfenster am Paderborner Dom" data-alt-de="Dreihasenfenster am Paderborner Dom" data-alt-en="Three hares window at Paderborn Cathedral" loading="lazy" decoding="async">
-            <figcaption><h4 data-de="Das Dreihasenfenster" data-en="The three hares window">Das Dreihasenfenster</h4><a href="https://de.wikipedia.org/wiki/Dreihasenbild" target="_blank" rel="noopener" data-de="Bildquelle: Wikipedia · Zum Artikel ↗" data-en="Image source: Wikipedia · Read the article ↗">Bildquelle: Wikipedia · Zum Artikel ↗</a></figcaption>
+            <figcaption><h4 data-de="Das Dreihasenfenster" data-en="The three hares window">Das Dreihasenfenster</h4><p data-de="Im Kreuzgang des Paderborner Doms wartet ein ungewöhnliches Bilderrätsel: Drei Hasen teilen sich nur drei Ohren, und doch hat jeder Hase für sich betrachtet zwei. Das Dreihasenfenster gehört zu den bekannten Wahrzeichen Paderborns. Wer genau hinschaut, entdeckt das raffinierte Zusammenspiel der Tiere und ihrer gemeinsam genutzten Ohren." data-en="An unusual visual puzzle awaits in the cloister of Paderborn Cathedral: three hares share just three ears, yet each hare appears to have two of its own. The three hares window is one of Paderborn’s familiar landmarks. A closer look reveals the clever arrangement of the animals and their shared ears.">Im Kreuzgang des Paderborner Doms wartet ein ungewöhnliches Bilderrätsel: Drei Hasen teilen sich nur drei Ohren, und doch hat jeder Hase für sich betrachtet zwei. Das Dreihasenfenster gehört zu den bekannten Wahrzeichen Paderborns. Wer genau hinschaut, entdeckt das raffinierte Zusammenspiel der Tiere und ihrer gemeinsam genutzten Ohren.</p><a href="https://de.wikipedia.org/wiki/Dreihasenbild" target="_blank" rel="noopener" data-de="Bildquelle: Wikipedia · Zum Artikel ↗" data-en="Image source: Wikipedia · Read the article ↗">Bildquelle: Wikipedia · Zum Artikel ↗</a></figcaption>
           </figure>
           <figure class="city-slide">
             <img src="img/Rathaus_Paderborn_2026.jpg" width="5285" height="4900" alt="Das Paderborner Rathaus im Jahr 2026" data-alt-de="Das Paderborner Rathaus im Jahr 2026" data-alt-en="Paderborn Town Hall in 2026" loading="lazy" decoding="async">
-            <figcaption><h4 data-de="Das Paderborner Rathaus" data-en="Paderborn Town Hall">Das Paderborner Rathaus</h4><a href="https://de.wikipedia.org/wiki/Rathaus_Paderborn" target="_blank" rel="noopener" data-de="Bildquelle: Wikipedia · Zum Artikel ↗" data-en="Image source: Wikipedia · Read the article ↗">Bildquelle: Wikipedia · Zum Artikel ↗</a></figcaption>
+            <figcaption><h4 data-de="Das Paderborner Rathaus" data-en="Paderborn Town Hall">Das Paderborner Rathaus</h4><p data-de="Mit seinen drei markanten Giebeln ist das historische Rathaus ein prägendes Gebäude der Paderborner Innenstadt. Die reich gegliederte Fassade zeigt die Formen der Weserrenaissance. An Giebeln, Fenstern und Portalen lassen sich zahlreiche Details entdecken – ein guter Anlass, auf dem Rathausplatz kurz stehen zu bleiben und den Blick nach oben zu richten." data-en="With its three distinctive gables, the historic town hall is a landmark of Paderborn’s city centre. Its richly articulated façade displays the forms of the Weser Renaissance. The gables, windows and entrances reveal many details—a good reason to pause in the town hall square and look up.">Mit seinen drei markanten Giebeln ist das historische Rathaus ein prägendes Gebäude der Paderborner Innenstadt. Die reich gegliederte Fassade zeigt die Formen der Weserrenaissance. An Giebeln, Fenstern und Portalen lassen sich zahlreiche Details entdecken – ein guter Anlass, auf dem Rathausplatz kurz stehen zu bleiben und den Blick nach oben zu richten.</p><a href="https://de.wikipedia.org/wiki/Rathaus_Paderborn" target="_blank" rel="noopener" data-de="Bildquelle: Wikipedia · Zum Artikel ↗" data-en="Image source: Wikipedia · Read the article ↗">Bildquelle: Wikipedia · Zum Artikel ↗</a></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
+    <section class="news section" id="aktuelles" aria-labelledby="news-title">
+      <div class="section-label" data-de="02 / AKTUELLES" data-en="02 / NEWS">02 / AKTUELLES</div>
+      <div class="news-heading"><h2 id="news-title" data-de="Auf dem Weg.<br><em>Auf Sendung.</em>" data-en="Getting ready.<br><em>Going on air.</em>">Auf dem Weg.<br><em>Auf Sendung.</em></h2><p data-de="Neuigkeiten zur Vorbereitung und zur gemeinsamen Aktion im Jubiläumsjahr 2027." data-en="Updates on our preparations and our shared activity during the 2027 anniversary year.">Neuigkeiten zur Vorbereitung und zur gemeinsamen Aktion im Jubiläumsjahr 2027.</p></div>
+      <div class="news-grid">
+        <article class="news-card"><time datetime="2026-10-23" data-de="23. Oktober 2026" data-en="23 October 2026">23. Oktober 2026</time><h3 data-de="Das Team wächst" data-en="Our team is growing">Das Team wächst</h3><p data-de="Neben DN9DKN und DO6NIK sind auch DD1AW und DL3ZAT dabei. Unter den Operatoren findest du außerdem die Clubstationen DL0PS und DL0HNF. Gemeinsam gestalten wir die Aktivität unter DL1250PB." data-en="DD1AW and DL3ZAT are joining DN9DKN and DO6NIK. You can also find the club stations DL0PS and DL0HNF below the operators. Together, we are shaping the activity under DL1250PB.">Neben DN9DKN und DO6NIK sind auch DD1AW und DL3ZAT dabei. Unter den Operatoren findest du außerdem die Clubstationen DL0PS und DL0HNF. Gemeinsam gestalten wir die Aktivität unter DL1250PB.</p><a href="#operatoren"><span data-de="Zum Team" data-en="Meet the team">Zum Team</span> <span aria-hidden="true">↗</span></a></article>
+        <article class="news-card"><time datetime="2026-10-23" data-de="23. Oktober 2026" data-en="23 October 2026">23. Oktober 2026</time><h3 data-de="Die Aktivierungen im Blick" data-en="Planning our activations">Die Aktivierungen im Blick</h3><p data-de="Die ersten Termine für 2027 stehen im Kalender. Die Kurzübersicht am Seitenanfang zeigt die nächste geplante Aktivierung. Ein Band aus der Terminbeschreibung wird mit angezeigt; die genaue Band- und QRG-Wahl bleibt dem Operator überlassen." data-en="The first dates for 2027 are in the calendar. The overview near the top of this page shows the next planned activation. Band details from the event description are included; the operator remains free to choose the actual band and operating frequency.">Die ersten Termine für 2027 stehen im Kalender. Die Kurzübersicht am Seitenanfang zeigt die nächste geplante Aktivierung. Ein Band aus der Terminbeschreibung wird mit angezeigt; die genaue Band- und QRG-Wahl bleibt dem Operator überlassen.</p><a href="#kalender"><span data-de="Zum Kalender" data-en="View the calendar">Zum Kalender</span> <span aria-hidden="true">↗</span></a></article>
+        <article class="news-card"><time datetime="2026-10-23" data-de="23. Oktober 2026" data-en="23 October 2026">23. Oktober 2026</time><h3 data-de="Ein ganzes Jahr DL1250PB" data-en="A full year of DL1250PB">Ein ganzes Jahr DL1250PB</h3><p data-de="Vom 1. Januar bis zum 31. Dezember 2027 bringen wir das 1250-jährige Stadtjubiläum Paderborns auf die Bänder. Der Sonder-DOK lautet 1250PB. Die Informationen zur QSL-Anforderung sind bereits zusammengestellt und erklären die verschiedenen Wege zur Karte." data-en="From 1 January to 31 December 2027, we will bring Paderborn’s 1,250th anniversary to the bands. The special DOK is 1250PB. Our QSL request information is already available and explains the different ways to obtain your card.">Vom 1. Januar bis zum 31. Dezember 2027 bringen wir das 1250-jährige Stadtjubiläum Paderborns auf die Bänder. Der Sonder-DOK lautet 1250PB. Die Informationen zur QSL-Anforderung sind bereits zusammengestellt und erklären die verschiedenen Wege zur Karte.</p><a href="#qsl"><span data-de="QSL-Informationen" data-en="QSL information">QSL-Informationen</span> <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+
     <section class="live section" id="live">
-      <div class="section-label light" data-de="02 / LIVE VOM BAND" data-en="02 / LIVE FROM THE BANDS">02 / LIVE VOM BAND</div>
+      <div class="section-label light" data-de="03 / LIVE VOM BAND" data-en="03 / LIVE FROM THE BANDS">03 / LIVE VOM BAND</div>
       <div class="live-heading"><div><p class="eyebrow coral"><span></span> LOGBOOK</p><h2 data-de="Unsere Aktivität.<br><em>Im Überblick.</em>" data-en="Our activity.<br><em>At a glance.</em>">Unsere Aktivität.<br><em>Im Überblick.</em></h2><div class="activity-links"><a class="button activity-button" href="https://log.dclnext.darc.de/visitor/dn9dkn" target="_blank" rel="noopener" data-de="Logbuch &amp; Statistik <span>↗</span>" data-en="Logbook &amp; statistics <span>↗</span>">Logbuch &amp; Statistik <span>↗</span></a><a class="button activity-button" href="https://log.dclnext.darc.de/visitor/exportmap/dn9dkn" target="_blank" rel="noopener" data-de="QSO-Weltkarte <span>↗</span>" data-en="QSO world map <span>↗</span>">QSO-Weltkarte <span>↗</span></a></div></div></div>
       <div class="widgets">
         <article class="widget"><div class="widget-title"><span data-de="GERADE AUF SENDUNG" data-en="ON AIR NOW">GERADE AUF SENDUNG</span><span>ON AIR ●</span></div><div class="embed-consent" data-embed="https://log.dclnext.darc.de/widgets/on_air/2ea0c65956" data-title-de="On-Air-Aktivität von DL1250PB" data-title-en="On-air activity from DL1250PB"><p data-de="Beim Laden wird eine Verbindung zu DCLnext/DARC hergestellt. Dabei kann deine IP-Adresse übertragen werden." data-en="Loading this widget connects to DCLnext/DARC and may transmit your IP address.">Beim Laden wird eine Verbindung zu DCLnext/DARC hergestellt. Dabei kann deine IP-Adresse übertragen werden.</p><button type="button" data-de="ON-AIR-ANZEIGE LADEN" data-en="LOAD ON-AIR WIDGET">ON-AIR-ANZEIGE LADEN</button></div></article>
@@ -80,7 +103,7 @@
     </section>
 
     <section class="calendar-section section" id="kalender">
-      <div class="section-label" data-de="03 / TERMINE" data-en="03 / SCHEDULE">03 / TERMINE</div>
+      <div class="section-label" data-de="04 / TERMINE" data-en="04 / SCHEDULE">04 / TERMINE</div>
       <div class="calendar-heading"><div><p class="eyebrow ink" data-de="<span></span> GANZJÄHRIG QRV" data-en="<span></span> ACTIVE ALL YEAR"><span></span> GANZJÄHRIG QRV</p><h2 data-de="Unser Kalender.<br><em>Unsere Aktivität.</em>" data-en="Our calendar.<br><em>Our activity.</em>">Unser Kalender.<br><em>Unsere Aktivität.</em></h2></div><p data-de="DL1250PB ist vom <strong>01.01. bis 31.12.2027</strong> QRV. Die Termine werden automatisch aus unserem extern gepflegten Kalender übernommen. Ein markierter Tag enthält mindestens eine geplante Aktivierung. Auch spontane Aktivierungen außerhalb des Kalenders sind möglich." data-en="DL1250PB will be active from <strong>1 January to 31 December 2027</strong>. Events are automatically loaded from our externally maintained calendar. A highlighted day contains at least one planned activation. Spontaneous activations outside the calendar are also possible.">DL1250PB ist vom <strong>01.01. bis 31.12.2027</strong> QRV. Die Termine werden automatisch aus unserem extern gepflegten Kalender übernommen. Ein markierter Tag enthält mindestens eine geplante Aktivierung. Auch spontane Aktivierungen außerhalb des Kalenders sind möglich.</p></div>
       <p class="calendar-note" data-de="<strong>Band &amp; QRG:</strong> Der eingetragene Operator wählt Band und Frequenz (QRG) frei. Enthält die Terminbeschreibung eine Bandangabe wie 80 m, wird sie direkt am Kalendertag und beim Termin angezeigt. Solche Angaben sind als Planung zu verstehen und können sich ändern." data-en="<strong>Band &amp; frequency:</strong> The scheduled operator is free to choose the band and operating frequency (QRG). If the event description includes a band such as 80 m, it appears directly on the calendar day and alongside the event. These details are plans and may change."><strong>Band &amp; QRG:</strong> Der eingetragene Operator wählt Band und Frequenz (QRG) frei. Enthält die Terminbeschreibung eine Bandangabe wie 80 m, wird sie direkt am Kalendertag und beim Termin angezeigt. Solche Angaben sind als Planung zu verstehen und können sich ändern.</p>
       <div class="calendar-shell">
@@ -94,19 +117,29 @@
     </section>
 
     <section class="operators section" id="operatoren">
-      <div class="section-label" data-de="04 / DAS TEAM" data-en="04 / THE TEAM">04 / DAS TEAM</div>
+      <div class="section-label" data-de="05 / DAS TEAM" data-en="05 / THE TEAM">05 / DAS TEAM</div>
       <div class="operators-heading"><div><p class="eyebrow ink" data-de="<span></span> GEMEINSAM AUF SENDUNG" data-en="<span></span> ON THE AIR TOGETHER"><span></span> GEMEINSAM AUF SENDUNG</p><h2 data-de="Die Operatoren hinter<br><em>dem Rufzeichen.</em>" data-en="The operators behind<br><em>the callsign.</em>">Die Operatoren hinter<br><em>dem Rufzeichen.</em></h2></div></div>
       <div class="operator-carousel">
         <div class="operator-controls"><button class="operator-prev" type="button" aria-label="Vorherige Operatoren">←</button><button class="operator-next" type="button" aria-label="Nächste Operatoren">→</button></div>
         <div class="operator-grid" id="operator-list" tabindex="0">
           <article class="operator"><h3>DN9DKN</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>10 m – 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
           <article class="operator"><h3>DO6NIK</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m · 15 m · 10 m · 2 m · 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
+          <article class="operator"><h3>DD1AW</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m – 10 m</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>DIGI · SSB</dd></div></dl></article>
+          <article class="operator"><h3>DL3ZAT</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m – 10 m</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>DIGI · SSB</dd></div></dl></article>
         </div>
+      </div>
+      <div class="clubstations-heading">
+        <p class="kicker" data-de="Gemeinsam QRV." data-en="On the air together.">Gemeinsam QRV.</p>
+        <h3 id="clubstations-title" data-de="Unsere Clubstationen." data-en="Our club stations.">Unsere Clubstationen.</h3>
+      </div>
+      <div class="operator-grid clubstation-grid" id="clubstation-list" tabindex="0" aria-labelledby="clubstations-title">
+        <article class="operator clubstation"><h3>DL0PS</h3><dl><div><dt data-de="STATIONSTYP" data-en="STATION TYPE">STATIONSTYP</dt><dd data-de="Clubstation" data-en="Club station">Clubstation</dd></div></dl></article>
+        <article class="operator clubstation"><h3>DL0HNF</h3><dl><div><dt data-de="STATIONSTYP" data-en="STATION TYPE">STATIONSTYP</dt><dd data-de="Clubstation" data-en="Club station">Clubstation</dd></div></dl></article>
       </div>
     </section>
 
     <section class="qsl section" id="qsl">
-      <div class="section-label light" data-de="05 / QSL & BESTÄTIGUNGEN" data-en="05 / QSL & CONFIRMATIONS">05 / QSL & BESTÄTIGUNGEN</div>
+      <div class="section-label light" data-de="06 / QSL & BESTÄTIGUNGEN" data-en="06 / QSL & CONFIRMATIONS">06 / QSL & BESTÄTIGUNGEN</div>
       <div class="qsl-layout">
         <div><p class="eyebrow coral" data-de="<span></span> BESTÄTIGUNG" data-en="<span></span> CONFIRMATION"><span></span> BESTÄTIGUNG</p><h2 data-de="Deine Verbindung.<br><em>Unsere Karte.</em>" data-en="Your contact.<br><em>Our card.</em>">Deine Verbindung.<br><em>Unsere Karte.</em></h2></div>
         <div class="qsl-copy"><p data-de="QSL-Karten über das Büro werden per Büro beantwortet. OQRS-Karten mit Versand über das Büro sind kostenlos. Direkt per Post eingesandte QSL-Karten benötigen einen SAE und eine Briefmarke oder 2 US-Dollar. Bitte beachte für OQRS und Postversand die Hinweise auf der OQRS-Seite." data-en="Bureau QSL cards will be answered via the bureau. OQRS cards sent via the bureau are free of charge. QSL cards sent directly by post require an SAE and a stamp or US$2. For OQRS and postal requests, please follow the information on the OQRS page.">QSL-Karten über das Büro werden per Büro beantwortet. OQRS-Karten mit Versand über das Büro sind kostenlos. Direkt per Post eingesandte QSL-Karten benötigen einen SAE und eine Briefmarke oder 2 US-Dollar. Bitte beachte für OQRS und Postversand die Hinweise auf der OQRS-Seite.</p><div class="qsl-links"><a class="button qsl-button" href="https://log.dclnext.darc.de/oqrs/dn9dkn" target="_blank" rel="noopener">OQRS <span>↗</span></a><a href="https://www.qrz.com/db/DN9DKN" target="_blank" rel="noopener">QRZ.COM ↗</a></div><a class="button address-button" href="qsl-address.html" rel="nofollow" data-de="QSL-Manager & Adresse öffnen <span>→</span>" data-en="Open QSL manager & address <span>→</span>">QSL-Manager & Adresse öffnen <span>→</span></a></div>
@@ -124,7 +157,7 @@
     </section>
 
     <section class="faq section" id="faq" aria-labelledby="faq-title">
-      <div class="section-label" data-de="06 / HÄUFIGE FRAGEN" data-en="06 / FREQUENTLY ASKED QUESTIONS">06 / HÄUFIGE FRAGEN</div>
+      <div class="section-label" data-de="07 / HÄUFIGE FRAGEN" data-en="07 / FREQUENTLY ASKED QUESTIONS">07 / HÄUFIGE FRAGEN</div>
       <div class="faq-heading">
         <h2 id="faq-title" data-de="Gut zu wissen.&lt;br&gt;&lt;em&gt;Einfach erklärt.&lt;/em&gt;" data-en="Good to know.&lt;br&gt;&lt;em&gt;Simply explained.&lt;/em&gt;">Gut zu wissen.<br><em>Einfach erklärt.</em></h2>
         <p data-de="Die wichtigsten Antworten zu unserem Sonderrufzeichen, zur Aktivität auf den Bändern und zu deiner nächsten Verbindung mit DL1250PB." data-en="Key answers about our special callsign, activity on the bands, and your next contact with DL1250PB.">Die wichtigsten Antworten zu unserem Sonderrufzeichen, zur Aktivität auf den Bändern und zu deiner nächsten Verbindung mit DL1250PB.</p>
@@ -137,7 +170,7 @@
     </section>
   </main>
 
-  <footer><div class="footer-call">DL1250PB</div><div><p data-de="1250 JAHRE PADERBORN" data-en="1250 YEARS OF PADERBORN">1250 JAHRE PADERBORN</p><p data-de="AMATEURFUNK · VERBINDET" data-en="AMATEUR RADIO · CONNECTS">AMATEURFUNK · VERBINDET</p></div><div class="footer-links"><a href="https://www.paderborn1250.de/de/" data-href-de="https://www.paderborn1250.de/de/" data-href-en="https://www.paderborn1250.de/en/" target="_blank" rel="noopener">Paderborn 1250 ↗</a><a href="https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/" target="_blank" rel="noopener">DARC N61 ↗</a><a href="impressum.html" rel="nofollow" data-de="Impressum" data-en="Legal notice">Impressum</a><a href="datenschutz.html" rel="nofollow" data-de="Datenschutz" data-en="Privacy">Datenschutz</a><a href="#top" data-de="Nach oben ↑" data-en="Back to top ↑">Nach oben ↑</a></div><p class="copyright">© 2026 DL1250PB · <span data-de="Diese Webseite wurde mit Hilfe von KI erstellt." data-en="This website was created with the help of AI.">Diese Webseite wurde mit Hilfe von KI erstellt.</span></p></footer>
-  <script src="script.js?v=20261023-calendar-bands"></script>
+  <footer><div class="footer-call">DL1250PB</div><div><p data-de="1250 JAHRE PADERBORN" data-en="1250 YEARS OF PADERBORN">1250 JAHRE PADERBORN</p><p data-de="AMATEURFUNK · VERBINDET" data-en="AMATEUR RADIO · CONNECTS">AMATEURFUNK · VERBINDET</p></div><div class="footer-links"><a href="#aktuelles" data-de="Aktuelles" data-en="News">Aktuelles</a><a href="https://www.paderborn1250.de/de/" data-href-de="https://www.paderborn1250.de/de/" data-href-en="https://www.paderborn1250.de/en/" target="_blank" rel="noopener">Paderborn 1250 ↗</a><a href="https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/" target="_blank" rel="noopener">DARC N61 ↗</a><a href="impressum.html" rel="nofollow" data-de="Impressum" data-en="Legal notice">Impressum</a><a href="datenschutz.html" rel="nofollow" data-de="Datenschutz" data-en="Privacy">Datenschutz</a><a href="#top" data-de="Nach oben ↑" data-en="Back to top ↑">Nach oben ↑</a></div><p class="copyright">© 2026 DL1250PB · <span data-de="Diese Webseite wurde mit Hilfe von KI erstellt." data-en="This website was created with the help of AI.">Diese Webseite wurde mit Hilfe von KI erstellt.</span></p></footer>
+  <script src="script.js?v=20261023-launch-content"></script>
 </body>
 </html>
