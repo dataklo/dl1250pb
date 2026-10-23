@@ -1,0 +1,141 @@
+.basics {
+  background: var(--cream);
+}
+
+.basics-heading {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: end;
+  gap: 40px;
+  margin: 60px 0 44px;
+}
+
+.basics-heading h2 {
+  margin: 0;
+}
+
+.basics-heading > p {
+  max-width: 440px;
+  margin: 0;
+  color: #405a64;
+  line-height: 1.75;
+}
+
+.basics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.basics-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--coral);
+  background: rgba(255, 255, 255, .4);
+}
+
+.basics-card h3 {
+  margin: 0 0 20px;
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+.basics-card p {
+  margin: 0 0 28px;
+  color: #405a64;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.basics-card a {
+  align-self: start;
+  margin-top: auto;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--coral);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.basics-glossary {
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.basics-glossary summary {
+  padding: 22px 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.basics-glossary dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 8px 0 28px;
+}
+
+.basics-glossary dt {
+  margin-bottom: 10px;
+  font: 700 13px monospace;
+  color: var(--ink);
+}
+
+.basics-glossary dd {
+  margin: 0;
+  color: #405a64;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.basics-glossary-more {
+  margin: 0 0 24px;
+  color: #405a64;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.basics-glossary-more a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.basics a:focus-visible,
+.basics-glossary summary:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 5px;
+}
+
+@media (max-width: 900px) {
+  .basics-heading,
+  .basics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .basics-heading {
+    gap: 24px;
+  }
+
+  .basics-glossary dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .basics-card {
+    padding: 24px;
+  }
+
+  .basics-glossary dl {
+    grid-template-columns: 1fr;
+  }
+}

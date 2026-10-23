@@ -1,0 +1,134 @@
+.activation-section {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 40px;
+  padding: 38px 7vw;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  background: var(--deep);
+  color: white;
+}
+
+.activation-heading h2 {
+  max-width: 420px;
+  margin: 16px 0;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -.035em;
+}
+
+.activation-note {
+  max-width: 420px;
+  margin: 0;
+  color: #aebcc1;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+#next-activation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  min-width: 0;
+  min-height: 160px;
+  padding-left: 32px;
+  border-left: 2px solid var(--coral);
+}
+
+.next-activation-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.next-activation-status {
+  margin: 0 0 12px;
+  color: var(--coral);
+  font: 600 10px monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.next-activation-info time {
+  display: block;
+  color: #c7d4d9;
+  font-size: 14px;
+}
+
+.next-activation-info h3 {
+  margin: 10px 0 6px;
+  font-size: 30px;
+  letter-spacing: -.035em;
+}
+
+.next-activation-time {
+  margin: 0;
+  color: var(--mint);
+  font: 500 13px monospace;
+  line-height: 1.5;
+}
+
+.next-activation-bands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 0;
+}
+
+.next-activation-bands span {
+  border: 1px solid rgba(199, 231, 215, .35);
+  padding: 5px 9px;
+  color: var(--mint);
+  font: 600 11px monospace;
+}
+
+.next-activation-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 18px;
+  min-height: 44px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, .4);
+  font: 600 11px monospace;
+}
+
+.next-activation-link:hover,
+.next-activation-link:focus-visible {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--deep);
+}
+
+.next-activation-link:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 4px;
+}
+
+.next-activation-empty {
+  max-width: 540px;
+  margin: 0;
+  color: #c7d4d9;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .activation-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .activation-section {
+    padding: 32px 22px;
+  }
+
+  #next-activation {
+    align-items: start;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 22px;
+  }
+}

@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /qsl-address.html
+
+Sitemap: https://dl1250pb.de/sitemap.xml
