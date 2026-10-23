@@ -22,6 +22,9 @@ const setLanguage = (language) => {
   document.querySelectorAll('[data-de][data-en]').forEach((element) => {
     element.innerHTML = element.dataset[language];
   });
+  document.querySelectorAll('[data-alt-de][data-alt-en]').forEach((image) => {
+    image.alt = language === 'en' ? image.dataset.altEn : image.dataset.altDe;
+  });
   languageToggle.querySelectorAll('span').forEach((label) => {
     label.classList.toggle('active', label.textContent.toLowerCase() === language);
   });
@@ -53,7 +56,7 @@ loadEvents();
 
 async function loadEvents() {
   try {
-    const response = await fetch('ics/dl1250pb.ics');
+    const response = await fetch('ics/dl1250pb.ics', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     events = parseIcs(await response.text());
   } catch (error) {
@@ -67,7 +70,7 @@ function parseIcs(source) {
   return unfolded.split(/BEGIN\\?:VEVENT/).slice(1).map((block) => {
     const value = (property) => {
       const match = block.match(new RegExp(`(?:^|\\r?\\n)${property}(?:;[^:\\r\\n]*)?\\\\?:([^\\r\\n]*)`));
-      return match ? match[1].trim().replace(/\\([,;\\])/g, '$1') : '';
+      return match ? match[1].trim().replace(/\\([nN,;\\])/g, (_, character) => character.toLowerCase() === 'n' ? '\n' : character) : '';
     };
     const start = value('DTSTART');
     const end = value('DTEND');
@@ -75,7 +78,13 @@ function parseIcs(source) {
     const date = `${start.slice(0, 4)}-${start.slice(4, 6)}-${start.slice(6, 8)}`;
     const time = start.includes('T') ? `${start.slice(9, 11)}:${start.slice(11, 13)}` : '';
     const endTime = end.includes('T') ? `${end.slice(9, 11)}:${end.slice(11, 13)}` : '';
-    return { date, titleDe: value('SUMMARY') || 'Aktivierung', titleEn: value('SUMMARY') || 'Activation', details: [time && endTime ? `${time}–${endTime}` : time, 'UTC'].filter(Boolean).join(' · ') };
+    return {
+      date,
+      titleDe: value('SUMMARY') || 'Aktivierung',
+      titleEn: value('SUMMARY') || 'Activation',
+      details: [time && endTime ? `${time}–${endTime}` : time, 'UTC'].filter(Boolean).join(' · '),
+      description: value('DESCRIPTION'),
+    };
   }).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date));
 }
 
@@ -110,7 +119,7 @@ function renderCalendar() {
   document.querySelector('#calendar-grid').innerHTML = cells.join('');
 
   document.querySelector('#calendar-events').innerHTML = upcomingEvents.length
-    ? upcomingEvents.map((event) => `<article><time datetime="${event.date}">${new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(`${event.date}T12:00:00`))}</time><div><strong>${escapeHtml(language === 'en' ? event.titleEn : event.titleDe)}</strong><span>${escapeHtml(event.details)}</span></div></article>`).join('')
+    ? upcomingEvents.map((event) => `<article><time datetime="${event.date}">${new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(`${event.date}T12:00:00`))}</time><div><strong>${escapeHtml(language === 'en' ? event.titleEn : event.titleDe)}</strong><span>${escapeHtml(event.details)}</span>${event.description ? `<p class="event-description">${escapeHtml(event.description)}</p>` : ''}</div></article>`).join('')
     : `<p class="no-events">${language === 'en' ? 'No further activations have been announced yet.' : 'Es wurden noch keine weiteren Aktivierungen angekündigt.'}</p>`;
 }
 
@@ -141,3 +150,37 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   operatorList.addEventListener('pointerenter', pauseAutoscroll, { once: true });
   operatorList.addEventListener('focusin', pauseAutoscroll, { once: true });
 }
+
+const cityGallery = document.querySelector('.city-gallery');
+const cityTrack = document.querySelector('.city-gallery-track');
+const qslImage = document.querySelector('.qsl-card-image');
+
+function syncCityImageHeight() {
+  cityGallery.style.setProperty('--city-image-height', getComputedStyle(qslImage).height);
+}
+
+new ResizeObserver(syncCityImageHeight).observe(qslImage);
+syncCityImageHeight();
+
+function scrollCityGallery(direction) {
+  const maxScroll = cityTrack.scrollWidth - cityTrack.clientWidth;
+  const current = cityTrack.scrollLeft;
+  const positions = [...cityTrack.querySelectorAll('.city-slide')]
+    .map((slide) => Math.min(slide.offsetLeft, maxScroll));
+  const target = direction > 0
+    ? positions.find((position) => position > current + 1) ?? 0
+    : positions.reverse().find((position) => position < current - 1) ?? maxScroll;
+  cityTrack.scrollTo({
+    left: target,
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+  });
+}
+
+document.querySelector('.city-gallery-prev').addEventListener('click', () => scrollCityGallery(-1));
+document.querySelector('.city-gallery-next').addEventListener('click', () => scrollCityGallery(1));
+cityTrack.addEventListener('keydown', (event) => {
+  if (event.target === cityTrack && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+    event.preventDefault();
+    scrollCityGallery(event.key === 'ArrowRight' ? 1 : -1);
+  }
+});
