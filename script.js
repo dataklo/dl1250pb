@@ -106,7 +106,6 @@ function renderCalendar() {
   });
   const firstDayOfMonth = `${year}-${String(month + 1).padStart(2, '0')}-01`;
   const upcomingEvents = events.filter((event) => event.date >= firstDayOfMonth);
-  const eventDates = new Set(monthEvents.map((event) => Number(event.date.slice(-2))));
   const weekdays = language === 'en' ? ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'] : ['MO', 'DI', 'MI', 'DO', 'FR', 'SA', 'SO'];
   document.querySelector('.calendar-weekdays').innerHTML = weekdays.map((day) => `<span>${day}</span>`).join('');
   document.querySelector('#calendar-month').textContent = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(calendarDate);
@@ -115,9 +114,17 @@ function renderCalendar() {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const cells = Array.from({ length: firstWeekday }, () => '<span class="calendar-day empty"></span>');
   for (let day = 1; day <= daysInMonth; day += 1) {
-    const hasEvent = eventDates.has(day);
-    const label = hasEvent ? (language === 'en' ? `${day}, scheduled event` : `${day}, geplanter Termin`) : String(day);
-    cells.push(`<span class="calendar-day${hasEvent ? ' has-event' : ''}" aria-label="${label}">${day}</span>`);
+    const dayEvents = monthEvents.filter((event) => Number(event.date.slice(-2)) === day);
+    const bands = [...new Set(dayEvents.flatMap((event) =>
+      (event.description.match(/\b\d+(?:[.,]\d+)?\s*(?:mm|cm|m)\b/gi) || [])
+        .map((band) => band.replace(/\s+/g, '').replace(',', '.').toLowerCase())
+    ))];
+    const hasEvent = dayEvents.length > 0;
+    const label = [hasEvent ? (language === 'en' ? `${day}, scheduled event` : `${day}, geplanter Termin`) : String(day), ...bands].join(', ');
+    const bandLabels = bands.length
+      ? `<span class="calendar-bands" aria-hidden="true">${bands.map((band) => `<span>${escapeHtml(band)}</span>`).join('')}</span>`
+      : '';
+    cells.push(`<span class="calendar-day${hasEvent ? ' has-event' : ''}${bands.length ? ' has-bands' : ''}" aria-label="${escapeHtml(label)}"><span>${day}</span>${bandLabels}</span>`);
   }
   document.querySelector('#calendar-grid').innerHTML = cells.join('');
 
