@@ -29,13 +29,16 @@ const setLanguage = (language) => {
   document.querySelectorAll('[data-alt-de][data-alt-en]').forEach((image) => {
     image.alt = language === 'en' ? image.dataset.altEn : image.dataset.altDe;
   });
+  document.querySelectorAll('meta[data-content-de][data-content-en]').forEach((meta) => {
+    meta.content = language === 'en' ? meta.dataset.contentEn : meta.dataset.contentDe;
+  });
   languageToggle.querySelectorAll('span').forEach((label) => {
     label.classList.toggle('active', label.textContent.toLowerCase() === language);
   });
   const english = language === 'en';
   languageToggle.setAttribute('aria-pressed', String(english));
   languageToggle.setAttribute('aria-label', english ? 'Webseite auf Deutsch umschalten' : 'Switch website to English');
-  document.title = english ? 'DL1250PB · Paderborn on the air' : 'DL1250PB · Paderborn auf Sendung';
+  document.title = english ? 'DL1250PB – Paderborn 1250th Anniversary 2027 | Amateur Radio' : 'DL1250PB – 1250 Jahre Paderborn 2027 | Amateurfunk';
   renderCalendar();
   renderNextActivation();
 };

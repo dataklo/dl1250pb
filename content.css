@@ -5,6 +5,39 @@
   line-height: 1.75;
 }
 
+.hero h1 .hero-callsign {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--mint);
+  font: 600 13px/1.5 monospace;
+  letter-spacing: .1em;
+}
+
+.hero-visitor-link {
+  margin: 24px 0 0;
+  color: var(--mint);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.hero-visitor-link a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hero-visitor-link a:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 5px;
+}
+
+.live-explainer {
+  max-width: 850px;
+  margin: -18px 0 30px;
+  color: #b8c4c8;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
 .clubstations-heading {
   margin: 62px 0 28px;
   padding-top: 28px;
@@ -96,5 +129,94 @@
 
   .news-heading {
     gap: 24px;
+  }
+}
+
+.operator-grid .clubstation {
+  flex-basis: clamp(300px, 34vw, 460px);
+}
+
+.clubstation .clubstation-hours {
+  margin: 0 0 18px;
+}
+
+.clubstation .clubstation-hours > div {
+  display: block;
+}
+
+.clubstation-hours dt {
+  margin-bottom: 10px;
+}
+
+.clubstation-hours dd {
+  font: 600 14px/1.65 Manrope, sans-serif;
+  text-align: left;
+}
+
+.operator-grid .clubstation p {
+  color: #405a64;
+  font: 400 14px/1.7 Manrope, sans-serif;
+}
+
+.clubstation-welcome {
+  margin: 0 0 18px;
+}
+
+.clubstation-registration {
+  margin: 0 0 24px;
+}
+
+.clubstation-registration strong {
+  display: block;
+  color: var(--ink);
+}
+
+.clubstation-registration a {
+  display: inline-block;
+  padding: 3px 0;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.clubstation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.clubstation-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.clubstation-links a:hover {
+  color: white;
+  background: var(--ink);
+}
+
+.clubstation-registration a:focus-visible,
+.clubstation-links a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+
+@media (max-width: 560px) {
+  .footer-call {
+    font-size: clamp(56px, 20vw, 70px);
+  }
+
+  .operator-grid .clubstation {
+    flex-basis: min(82vw, 320px);
   }
 }
