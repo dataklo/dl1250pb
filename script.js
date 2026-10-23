@@ -22,6 +22,9 @@ const setLanguage = (language) => {
   document.querySelectorAll('[data-de][data-en]').forEach((element) => {
     element.innerHTML = element.dataset[language];
   });
+  document.querySelectorAll('[data-href-de][data-href-en]').forEach((link) => {
+    link.href = language === 'en' ? link.dataset.hrefEn : link.dataset.hrefDe;
+  });
   document.querySelectorAll('[data-alt-de][data-alt-en]').forEach((image) => {
     image.alt = language === 'en' ? image.dataset.altEn : image.dataset.altDe;
   });
