@@ -44,6 +44,44 @@
   border-top: 1px solid var(--line);
 }
 
+.clubstation-address {
+  margin: 0 0 24px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.clubstation-address-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #51656d;
+  font: 500 10px monospace;
+  letter-spacing: .1em;
+}
+
+.clubstation-address a {
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 4px;
+}
+
+.clubstation-address a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.calendar-timezone {
+  margin: 0 0 18px;
+  color: #51656d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.calendar-timezone strong {
+  color: var(--ink);
+}
+
 .clubstations-heading h3 {
   margin: 16px 0 0;
   font-size: clamp(28px, 3vw, 42px);

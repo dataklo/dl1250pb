@@ -21,6 +21,7 @@ Anschließend `http://localhost:8080` öffnen.
 - Die Operatoren werden als Karten im Element `#operator-list` in `index.html` gepflegt.
 - Die Clubstationen stehen als Karten im gleichen Design direkt darunter in `#clubstation-list`. Bänder und Betriebsarten nur ergänzen, wenn sie für die jeweilige Station bekannt sind.
 - Besuchszeiten und Anmeldung stehen in den Clubstationskarten: DL0PS jeden zweiten und vierten Mittwoch im Monat ca. 17:30–20:20 Uhr, DL0HNF dienstags 17:00–19:00 Uhr. Diese Zeiten sind ausdrücklich Ortszeit, während der Aktivierungskalender UTC verwendet. Die festen Besuchszeiten werden nicht in den extern gepflegten ICS-Kalender geschrieben.
+- Die öffentlichen Treffpunkte sind in den Stationskarten und strukturierten Daten hinterlegt: DL0HNF, Fürstenallee 7, 33102 Paderborn; DL0PS, Kreuzung Hermann-Kirchhoff-Straße / Taubenweg, 33102 Paderborn. Die Adressen sind mit Kartenansichten verlinkt.
 - Der Einstieg für Interessierte ohne Funkwissen steht in `#amateurfunk`, mit kurzen Erklärungen und einem aufklappbaren Funklexikon. Die technischen Angaben für Funkamateure bleiben in Kalender, Live-Bereich und QSL-Informationen.
 - Die QSL-Angaben stehen im Abschnitt `#qsl`; die nicht indexierbare Anschrift steht in `qsl-address.html`.
 - Deutsche und englische Texte werden über `data-de` und `data-en` direkt an den jeweiligen Elementen gepflegt.
