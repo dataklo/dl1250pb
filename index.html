@@ -23,12 +23,13 @@
   <meta name="twitter:title" content="DL1250PB – 1250 Jahre Paderborn 2027 | Amateurfunk" data-content-de="DL1250PB – 1250 Jahre Paderborn 2027 | Amateurfunk" data-content-en="DL1250PB – Paderborn 1250th Anniversary 2027 | Amateur Radio">
   <meta name="twitter:description" content="DL1250PB zum Jubiläum 1250 Jahre Paderborn 2027: Sonder-DOK 1250PB, Aktivierungskalender, QSL und Besuche bei den Clubstationen DL0PS und DL0HNF." data-content-de="DL1250PB zum Jubiläum 1250 Jahre Paderborn 2027: Sonder-DOK 1250PB, Aktivierungskalender, QSL und Besuche bei den Clubstationen DL0PS und DL0HNF." data-content-en="DL1250PB celebrates Paderborn’s 1250th anniversary in 2027: special DOK 1250PB, amateur radio events, QSL information and club station visits.">
   <meta name="twitter:image" content="https://dl1250pb.de/qsl/dl1250pb.png">
-  <link rel="stylesheet" href="styles.css?v=20261023-seo-visitors">
-  <link rel="stylesheet" href="gallery.css?v=20261023-seo-visitors">
-  <link rel="stylesheet" href="info.css?v=20261023-seo-visitors">
-  <link rel="stylesheet" href="content.css?v=20261023-seo-visitors">
-  <link rel="stylesheet" href="activation.css?v=20261023-seo-visitors">
-  <link rel="stylesheet" href="basics.css?v=20261023-seo-visitors">
+  <link rel="stylesheet" href="styles.css?v=20261024-gallery-lightbox">
+  <link rel="stylesheet" href="gallery.css?v=20261024-gallery-fit">
+  <link rel="stylesheet" href="lightbox.css?v=20261024-gallery-fit">
+  <link rel="stylesheet" href="info.css?v=20261024-gallery-lightbox">
+  <link rel="stylesheet" href="content.css?v=20261024-gallery-lightbox">
+  <link rel="stylesheet" href="activation.css?v=20261024-gallery-lightbox">
+  <link rel="stylesheet" href="basics.css?v=20261024-gallery-lightbox">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -88,7 +89,13 @@
       "@type": "Organization",
       "@id": "https://dl1250pb.de/#n61",
       "name": "DARC-Ortsverband Paderborn N61",
-      "url": "https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/"
+      "url": "https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/",
+      "description": "OV-Abend bei Schinken Willi: jeden zweiten Mittwoch im Monat ab 20:00 Uhr Ortszeit, ohne Anmeldung.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Fragen zum OV-Abend",
+        "email": "qso@dl1250pb.de"
+      }
     },
     {
       "@type": "Organization",
@@ -99,7 +106,19 @@
       "sameAs": [
         "https://www.qrz.com/db/DL0PS"
       ],
-      "description": "Besuche nach Anmeldung: jeden zweiten und vierten Mittwoch im Monat, etwa 17:30 bis 20:20 Uhr Ortszeit. Auch Gäste ohne Amateurfunklizenz sind willkommen."
+      "description": "Besuchszeiten: jeden zweiten und vierten Mittwoch im Monat, etwa 17:30 bis 20:20 Uhr Ortszeit. Eine Anmeldung per E-Mail ist erwünscht. Auch Gäste ohne Amateurfunklizenz sind willkommen. DL0PS ist gelegentlich auch außerhalb der Clubstationsabende besetzt; zusätzliche Besuche sind nach vorheriger Anmeldung und Absprache möglich.",
+      "location": {
+        "@type": "Place",
+        "name": "Clubstation DL0PS",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hermann-Kirchhoff-Straße / Taubenweg",
+          "postalCode": "33102",
+          "addressLocality": "Paderborn",
+          "addressCountry": "DE"
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Hermann-Kirchhoff-Stra%C3%9Fe+%2F+Taubenweg%2C+33102+Paderborn"
+      }
     },
     {
       "@type": "Organization",
@@ -111,7 +130,19 @@
         "https://www.qrz.com/db/DL0HNF",
         "https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/dl0hnf-amateurfunk-im-hnf/"
       ],
-      "description": "Besuche nach Anmeldung: jeden Dienstag von 17:00 bis 19:00 Uhr Ortszeit."
+      "description": "Besuchszeiten: jeden Dienstag von 17:00 bis 19:00 Uhr Ortszeit. Eine Anmeldung per E-Mail ist erwünscht.",
+      "location": {
+        "@type": "Place",
+        "name": "Clubstation DL0HNF",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Fürstenallee 7",
+          "postalCode": "33102",
+          "addressLocality": "Paderborn",
+          "addressCountry": "DE"
+        },
+        "hasMap": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x47ba4b7db1359147:0x75496d53d80a2d58?sa=X&ved=1t:8290&ictx=111"
+      }
     }
   ]
 }
@@ -196,7 +227,7 @@
       <div class="basics-grid">
         <article class="basics-card"><h3 data-de="Menschen und Technik verbinden" data-en="Connecting people and technology">Menschen und Technik verbinden</h3><p data-de="Amateurfunk – kurz AFU – ist ein technisches Hobby. Funkamateure nutzen Funkgeräte und Antennen, um miteinander in Kontakt zu kommen, Technik auszuprobieren und Erfahrungen auszutauschen. Gespräche, Morsetelegrafie und digitale Betriebsarten gehören dazu." data-en="Amateur radio is a technical hobby. Radio amateurs use radios and antennas to make contact, experiment with technology and share their experience. They communicate by voice, Morse code and digital modes.">Amateurfunk – kurz AFU – ist ein technisches Hobby. Funkamateure nutzen Funkgeräte und Antennen, um miteinander in Kontakt zu kommen, Technik auszuprobieren und Erfahrungen auszutauschen. Gespräche, Morsetelegrafie und digitale Betriebsarten gehören dazu.</p><a href="#kalender"><span data-de="Geplante Funkaktivitäten ansehen" data-en="See planned radio activities">Geplante Funkaktivitäten ansehen</span> <span aria-hidden="true">→</span></a></article>
         <article class="basics-card"><h3 data-de="Ein Rufzeichen für das Jubiläum" data-en="A callsign for the anniversary">Ein Rufzeichen für das Jubiläum</h3><p data-de="DL1250PB ist das Sonderrufzeichen unserer Aktion zum 1250-jährigen Stadtjubiläum Paderborns. Mehrere Operatoren, also Funkamateure am Gerät, sind damit 2027 aktiv. Das Rufzeichen nennt die Station beim Funkkontakt; der Sonder-DOK 1250PB kennzeichnet den besonderen Anlass." data-en="DL1250PB is the special callsign for our activity marking Paderborn’s 1,250th anniversary. Several operators—the radio amateurs at the controls—will use it during 2027. The callsign identifies the station during a contact; the special DOK 1250PB marks the occasion.">DL1250PB ist das Sonderrufzeichen unserer Aktion zum 1250-jährigen Stadtjubiläum Paderborns. Mehrere Operatoren, also Funkamateure am Gerät, sind damit 2027 aktiv. Das Rufzeichen nennt die Station beim Funkkontakt; der Sonder-DOK 1250PB kennzeichnet den besonderen Anlass.</p><a href="#qsl"><span data-de="Mehr zu Funkbestätigungen" data-en="About contact confirmations">Mehr zu Funkbestätigungen</span> <span aria-hidden="true">→</span></a></article>
-        <article class="basics-card"><h3 data-de="Neugierig? Komm vorbei." data-en="Curious? Come and visit.">Neugierig? Komm vorbei.</h3><p data-de="Du möchtest wissen, wie eine Funkverbindung entsteht oder wie eine Station aussieht? Auch ohne Funkwissen und Amateurfunkzulassung bist du als Gast willkommen. Unsere Clubstationen DL0PS und DL0HNF freuen sich über Interessierte. Bitte melde deinen Besuch vorher über die jeweilige E-Mail-Adresse an." data-en="Would you like to see how a radio contact is made or what a station looks like? Guests are welcome even without radio knowledge or an amateur radio licence. Our club stations DL0PS and DL0HNF welcome interested visitors. Please register your visit in advance using the station’s email address.">Du möchtest wissen, wie eine Funkverbindung entsteht oder wie eine Station aussieht? Auch ohne Funkwissen und Amateurfunkzulassung bist du als Gast willkommen. Unsere Clubstationen DL0PS und DL0HNF freuen sich über Interessierte. Bitte melde deinen Besuch vorher über die jeweilige E-Mail-Adresse an.</p><a href="#clubstations-title"><span data-de="Besuchszeiten und Anmeldung" data-en="Visiting times and registration">Besuchszeiten und Anmeldung</span> <span aria-hidden="true">→</span></a></article>
+        <article class="basics-card"><h3 data-de="Neugierig? Komm vorbei." data-en="Curious? Come and visit.">Neugierig? Komm vorbei.</h3><p data-de="Du möchtest wissen, wie eine Funkverbindung entsteht oder wie eine Station aussieht? Auch ohne Funkwissen und Amateurfunkzulassung bist du als Gast willkommen. Unsere Clubstationen DL0PS und DL0HNF freuen sich über Interessierte. Wir freuen uns über eine kurze Anmeldung per E-Mail an die jeweilige Clubstation." data-en="Would you like to see how a radio contact is made or what a station looks like? Guests are welcome even without radio knowledge or an amateur radio licence. Our club stations DL0PS and DL0HNF welcome interested visitors. We appreciate a short email to the relevant club station before your visit.">Du möchtest wissen, wie eine Funkverbindung entsteht oder wie eine Station aussieht? Auch ohne Funkwissen und Amateurfunkzulassung bist du als Gast willkommen. Unsere Clubstationen DL0PS und DL0HNF freuen sich über Interessierte. Wir freuen uns über eine kurze Anmeldung per E-Mail an die jeweilige Clubstation.</p><a href="#clubstations-title"><span data-de="Besuchszeiten und Anmeldung" data-en="Visiting times and registration">Besuchszeiten und Anmeldung</span> <span aria-hidden="true">→</span></a></article>
       </div>
       <details class="basics-glossary"><summary data-de="Funkbegriffe auf einen Blick" data-en="Radio terms at a glance">Funkbegriffe auf einen Blick</summary><dl>
         <div><dt data-de="Operator" data-en="Operator">Operator</dt><dd data-de="Der Funkamateur, der die Station gerade bedient." data-en="The radio amateur currently operating the station.">Der Funkamateur, der die Station gerade bedient.</dd></div>
@@ -232,6 +263,7 @@
       <div class="section-label" data-de="04 / TERMINE" data-en="04 / SCHEDULE">04 / TERMINE</div>
       <div class="calendar-heading"><div><p class="eyebrow ink" data-de="<span></span> GANZJÄHRIG QRV" data-en="<span></span> ACTIVE ALL YEAR"><span></span> GANZJÄHRIG QRV</p><h2 data-de="Unser Kalender.<br><em>Unsere Aktivität.</em>" data-en="Our calendar.<br><em>Our activity.</em>">Unser Kalender.<br><em>Unsere Aktivität.</em></h2></div><p data-de="DL1250PB ist vom <strong>01.01. bis 31.12.2027</strong> QRV. Die Termine werden automatisch aus unserem extern gepflegten Kalender übernommen. Ein markierter Tag enthält mindestens eine geplante Aktivierung. Auch spontane Aktivierungen außerhalb des Kalenders sind möglich." data-en="DL1250PB will be active from <strong>1 January to 31 December 2027</strong>. Events are automatically loaded from our externally maintained calendar. A highlighted day contains at least one planned activation. Spontaneous activations outside the calendar are also possible.">DL1250PB ist vom <strong>01.01. bis 31.12.2027</strong> QRV. Die Termine werden automatisch aus unserem extern gepflegten Kalender übernommen. Ein markierter Tag enthält mindestens eine geplante Aktivierung. Auch spontane Aktivierungen außerhalb des Kalenders sind möglich.</p></div>
       <p class="calendar-note" data-de="<strong>Band &amp; QRG:</strong> Der eingetragene Operator wählt Band und Frequenz (QRG) frei. Enthält die Terminbeschreibung eine Bandangabe wie 80 m, wird sie direkt am Kalendertag und beim Termin angezeigt. Solche Angaben sind als Planung zu verstehen und können sich ändern." data-en="<strong>Band &amp; frequency:</strong> The scheduled operator is free to choose the band and operating frequency (QRG). If the event description includes a band such as 80 m, it appears directly on the calendar day and alongside the event. These details are plans and may change."><strong>Band &amp; QRG:</strong> Der eingetragene Operator wählt Band und Frequenz (QRG) frei. Enthält die Terminbeschreibung eine Bandangabe wie 80 m, wird sie direkt am Kalendertag und beim Termin angezeigt. Solche Angaben sind als Planung zu verstehen und können sich ändern.</p>
+      <p class="calendar-timezone" data-de="Aktivierungszeiten: <strong>UTC (Weltzeit)</strong>. Besuchszeiten der Clubstationen stehen separat in Ortszeit." data-en="Activation times: <strong>UTC (Coordinated Universal Time)</strong>. Club station visiting times are listed separately in local time.">Aktivierungszeiten: <strong>UTC (Weltzeit)</strong>. Besuchszeiten der Clubstationen stehen separat in Ortszeit.</p>
       <div class="calendar-shell">
         <div class="calendar-card">
           <div class="calendar-controls"><button id="calendar-prev" type="button" aria-label="Vorheriger Monat">←</button><h3 id="calendar-month" aria-live="polite"></h3><button id="calendar-next" type="button" aria-label="Nächster Monat">→</button></div>
@@ -250,28 +282,37 @@
         <div class="operator-grid" id="operator-list" tabindex="0">
           <article class="operator"><h3>DN9DKN</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>10 m – 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
           <article class="operator"><h3>DO6NIK</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m · 15 m · 10 m · 2 m · 70 cm</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
-          <article class="operator"><h3>DD1AW</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m – 10 m</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>DIGI · SSB</dd></div></dl></article>
-          <article class="operator"><h3>DL3ZAT</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m – 10 m</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>DIGI · SSB</dd></div></dl></article>
+          <article class="operator"><h3>DD1AW</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m – 10 m</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
+          <article class="operator"><h3>DL3ZAT</h3><dl><div><dt data-de="BÄNDER" data-en="BANDS">BÄNDER</dt><dd>80 m – 10 m</dd></div><div><dt data-de="BETRIEBSARTEN" data-en="MODES">BETRIEBSARTEN</dt><dd>SSB · DIGI</dd></div></dl></article>
         </div>
       </div>
       <div class="clubstations-heading">
         <p class="kicker" data-de="Gemeinsam QRV." data-en="On the air together.">Gemeinsam QRV.</p>
-        <h3 id="clubstations-title" data-de="Unsere Clubstationen." data-en="Our club stations.">Unsere Clubstationen.</h3>
+        <h3 id="clubstations-title" data-de="Clubstationen &amp; OV-Abend." data-en="Club stations &amp; club evening.">Clubstationen &amp; OV-Abend.</h3>
       </div>
       <div class="operator-grid clubstation-grid" id="clubstation-list" tabindex="0" aria-labelledby="clubstations-title">
 <article class="operator clubstation">
           <h3 id="dl0ps">DL0PS</h3>
+          <address class="clubstation-address"><span class="clubstation-address-label" data-de="TREFFPUNKT" data-en="LOCATION">TREFFPUNKT</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Hermann-Kirchhoff-Stra%C3%9Fe+%2F+Taubenweg%2C+33102+Paderborn" target="_blank" rel="noopener"><span data-de="Kreuzung Hermann-Kirchhoff-Straße / Taubenweg" data-en="Hermann-Kirchhoff-Straße / Taubenweg junction">Kreuzung Hermann-Kirchhoff-Straße / Taubenweg</span><br>33102 Paderborn <span aria-hidden="true">↗</span></a></address>
           <dl class="clubstation-hours"><div><dt data-de="BESETZT" data-en="STAFFED">BESETZT</dt><dd><span data-de="Jeden 2. und 4. Mittwoch im Monat" data-en="Every 2nd and 4th Wednesday of the month">Jeden 2. und 4. Mittwoch im Monat</span><br><span data-de="ca. 17:30–20:20 Uhr · Ortszeit" data-en="approx. 17:30–20:20 · local time">ca. 17:30–20:20 Uhr · Ortszeit</span></dd></div></dl>
-          <p class="clubstation-welcome" data-de="Besuch ist herzlich willkommen – auch ohne Amateurfunklizenz. Alle, die sich für Funk und die Clubstation interessieren, dürfen gerne vorbeischauen." data-en="Visitors are warmly welcome, including those without an amateur radio licence. Anyone interested in radio and the club station is welcome to visit.">Besuch ist herzlich willkommen – auch ohne Amateurfunklizenz. Alle, die sich für Funk und die Clubstation interessieren, dürfen gerne vorbeischauen.</p>
-          <p class="clubstation-registration"><strong data-de="Anmeldung erforderlich:" data-en="Advance registration required:">Anmeldung erforderlich:</strong> <a href="mailto:dl0ps@dl1250pb.de">dl0ps@dl1250pb.de</a></p>
+          <p class="clubstation-welcome" data-de="Besuch ist herzlich willkommen – auch ohne Amateurfunklizenz. Alle, die sich für Funk und die Clubstation interessieren, dürfen gerne vorbeischauen. DL0PS ist gelegentlich auch außerhalb der Clubstationsabende besetzt. Ein Besuch ist dann nach vorheriger Anmeldung und Absprache möglich." data-en="Visitors are warmly welcome, including those without an amateur radio licence. Anyone interested in radio and the club station is welcome to visit. DL0PS is sometimes staffed outside the regular club station evenings. Visits at these times are possible by prior registration and arrangement.">Besuch ist herzlich willkommen – auch ohne Amateurfunklizenz. Alle, die sich für Funk und die Clubstation interessieren, dürfen gerne vorbeischauen. DL0PS ist gelegentlich auch außerhalb der Clubstationsabende besetzt. Ein Besuch ist dann nach vorheriger Anmeldung und Absprache möglich.</p>
+          <p class="clubstation-registration"><strong data-de="Anmeldung per E-Mail erwünscht:" data-en="Email registration appreciated:">Anmeldung per E-Mail erwünscht:</strong> <a href="mailto:dl0ps@dl1250pb.de">dl0ps@dl1250pb.de</a></p>
           <div class="clubstation-links"><a href="https://www.qrz.com/db/DL0PS" target="_blank" rel="noopener">QRZ · DL0PS <span aria-hidden="true">↗</span></a></div>
         </article>
         <article class="operator clubstation">
           <h3 id="dl0hnf">DL0HNF</h3>
+          <address class="clubstation-address"><span class="clubstation-address-label" data-de="TREFFPUNKT" data-en="LOCATION">TREFFPUNKT</span><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47ba4b7db1359147:0x75496d53d80a2d58?sa=X&amp;ved=1t:8290&amp;ictx=111" target="_blank" rel="noopener"><span data-de="Fürstenallee 7" data-en="Fürstenallee 7">Fürstenallee 7</span><br>33102 Paderborn <span aria-hidden="true">↗</span></a></address>
           <dl class="clubstation-hours"><div><dt data-de="BESETZT" data-en="STAFFED">BESETZT</dt><dd><span data-de="Jeden Dienstag" data-en="Every Tuesday">Jeden Dienstag</span><br><span data-de="17:00–19:00 Uhr · Ortszeit" data-en="17:00–19:00 · local time">17:00–19:00 Uhr · Ortszeit</span></dd></div></dl>
-          <p class="clubstation-welcome" data-de="Besuche sind nach vorheriger Anmeldung möglich. Weitere Informationen zur Clubstation und zum Amateurfunk im HNF findest du auf der DARC-Seite." data-en="Visits are possible by prior arrangement. Further information about the club station and amateur radio at the HNF is available on the DARC website.">Besuche sind nach vorheriger Anmeldung möglich. Weitere Informationen zur Clubstation und zum Amateurfunk im HNF findest du auf der DARC-Seite.</p>
-          <p class="clubstation-registration"><strong data-de="Bitte vorab anmelden:" data-en="Please register in advance:">Bitte vorab anmelden:</strong> <a href="mailto:dl0hnf@dl1250pb.de">dl0hnf@dl1250pb.de</a></p>
+          <p class="clubstation-welcome" data-de="Besuch ist herzlich willkommen. Eine Anmeldung per E-Mail ist erwünscht. Weitere Informationen zur Clubstation und zum Amateurfunk im HNF findest du auf der DARC-Seite." data-en="Visitors are warmly welcome. Email registration is appreciated. Further information about the club station and amateur radio at the HNF is available on the DARC website.">Besuch ist herzlich willkommen. Eine Anmeldung per E-Mail ist erwünscht. Weitere Informationen zur Clubstation und zum Amateurfunk im HNF findest du auf der DARC-Seite.</p>
+          <p class="clubstation-registration"><strong data-de="Anmeldung per E-Mail erwünscht:" data-en="Email registration appreciated:">Anmeldung per E-Mail erwünscht:</strong> <a href="mailto:dl0hnf@dl1250pb.de">dl0hnf@dl1250pb.de</a></p>
           <div class="clubstation-links"><a href="https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/dl0hnf-amateurfunk-im-hnf/" target="_blank" rel="noopener"><span data-de="Infos beim DARC" data-en="Information at DARC">Infos beim DARC</span> <span aria-hidden="true">↗</span></a><a href="https://www.qrz.com/db/DL0HNF" target="_blank" rel="noopener">QRZ · DL0HNF <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="operator clubstation ov-evening">
+          <h3 id="ov-abend" data-de="OV-Abend" data-en="Club evening">OV-Abend</h3>
+          <p class="ov-evening-place" data-de="Ortsverbandsabend bei Schinken Willi" data-en="Local chapter evening at Schinken Willi">Ortsverbandsabend bei Schinken Willi</p>
+          <dl class="clubstation-hours"><div><dt data-de="TERMIN" data-en="WHEN">TERMIN</dt><dd><span data-de="Jeden 2. Mittwoch im Monat" data-en="Every 2nd Wednesday of the month">Jeden 2. Mittwoch im Monat</span><br><span data-de="ab 20:00 Uhr · Ortszeit" data-en="from 20:00 · local time">ab 20:00 Uhr · Ortszeit</span></dd></div></dl>
+          <p class="clubstation-welcome" data-de="Beim OV-Abend trifft sich unser Ortsverband zum gemeinsamen Austausch. Eine Anmeldung ist nicht notwendig." data-en="Our local chapter meets for an evening of conversation and exchange. No registration is needed.">Beim OV-Abend trifft sich unser Ortsverband zum gemeinsamen Austausch. Eine Anmeldung ist nicht notwendig.</p>
+          <p class="clubstation-registration"><strong data-de="Keine Anmeldung erforderlich." data-en="No registration required.">Keine Anmeldung erforderlich.</strong><span data-de="Fragen zum OV-Abend:" data-en="Questions about the club evening:">Fragen zum OV-Abend:</span> <a href="mailto:qso@dl1250pb.de">qso@dl1250pb.de</a></p>
         </article>
       </div>
     </section>
@@ -301,7 +342,6 @@
         <p data-de="Die wichtigsten Antworten zu unserem Sonderrufzeichen, zur Aktivität auf den Bändern und zu deiner nächsten Verbindung mit DL1250PB." data-en="Key answers about our special callsign, activity on the bands, and your next contact with DL1250PB.">Die wichtigsten Antworten zu unserem Sonderrufzeichen, zur Aktivität auf den Bändern und zu deiner nächsten Verbindung mit DL1250PB.</p>
       </div>
       <div class="faq-list">
-        <details><summary data-de="DL1250PB, 1250PB oder DL1250 – was bedeuten die Bezeichnungen?" data-en="DL1250PB, 1250PB or DL1250—what do these names mean?">DL1250PB, 1250PB oder DL1250 – was bedeuten die Bezeichnungen?</summary><p data-de="Unser vollständiges Sonderrufzeichen lautet &lt;strong&gt;DL1250PB&lt;/strong&gt;. &lt;strong&gt;1250PB&lt;/strong&gt; ist der Sonder-DOK zum Jubiläum &lt;strong&gt;1250 Jahre Paderborn&lt;/strong&gt;. Bei &lt;strong&gt;DL1250&lt;/strong&gt; fehlt die Endung „PB“ unseres Rufzeichens. Beim Funkkontakt wird das vollständige Rufzeichen DL1250PB verwendet." data-en="Our full special callsign is &lt;strong&gt;DL1250PB&lt;/strong&gt;. &lt;strong&gt;1250PB&lt;/strong&gt; is the special DOK for &lt;strong&gt;Paderborn’s 1250th anniversary&lt;/strong&gt;. The shortened spelling &lt;strong&gt;DL1250&lt;/strong&gt; leaves out the “PB” ending. The full callsign DL1250PB is used for radio contacts.">Unser vollständiges Sonderrufzeichen lautet <strong>DL1250PB</strong>. <strong>1250PB</strong> ist der Sonder-DOK zum Jubiläum <strong>1250 Jahre Paderborn</strong>. Bei <strong>DL1250</strong> fehlt die Endung „PB“ unseres Rufzeichens. Beim Funkkontakt wird das vollständige Rufzeichen DL1250PB verwendet.</p></details>
         <details><summary data-de="Was bedeutet Sonder-DOK?" data-en="What does special DOK mean?">Was bedeutet Sonder-DOK?</summary><p data-de="Der DOK ist der Distrikts- und Ortsverbandskenner des DARC. Für besondere Anlässe gibt es Sonder-DOKs. Unser Sonder-DOK &lt;strong&gt;1250PB&lt;/strong&gt; steht für das 1250-jährige Stadtjubiläum Paderborns. Unser Rufzeichen lautet &lt;strong&gt;DL1250PB&lt;/strong&gt;; der Ortsverband Paderborn hat den DOK &lt;strong&gt;N61&lt;/strong&gt;." data-en="A DOK identifies a DARC district and local chapter. Special DOKs mark special occasions. Our special DOK &lt;strong&gt;1250PB&lt;/strong&gt; celebrates Paderborn’s 1,250th anniversary. Our callsign is &lt;strong&gt;DL1250PB&lt;/strong&gt;; the Paderborn local chapter’s DOK is &lt;strong&gt;N61&lt;/strong&gt;.">Der DOK ist der Distrikts- und Ortsverbandskenner des DARC. Für besondere Anlässe gibt es Sonder-DOKs. Unser Sonder-DOK <strong>1250PB</strong> steht für das 1250-jährige Stadtjubiläum Paderborns. Unser Rufzeichen lautet <strong>DL1250PB</strong>; der Ortsverband Paderborn hat den DOK <strong>N61</strong>.</p></details>
         <details><summary data-de="Wie finde ich eure aktuelle Frequenz?" data-en="How do I find your current frequency?">Wie finde ich eure aktuelle Frequenz?</summary><p data-de="Lade im Abschnitt &lt;a href=&quot;#live&quot;&gt;Live&lt;/a&gt; die On-Air-Anzeige, um die dort veröffentlichten Aktivitätsangaben zu sehen. Band und Frequenz (QRG) wählt der jeweilige Operator frei. Bandangaben im Kalender sind Planungen und können sich ändern." data-en="Load the on-air widget in the &lt;a href=&quot;#live&quot;&gt;Live section&lt;/a&gt; to see the activity information published there. Each operator is free to choose the band and operating frequency (QRG). Band details in the calendar are plans and may change.">Lade im Abschnitt <a href="#live">Live</a> die On-Air-Anzeige, um die dort veröffentlichten Aktivitätsangaben zu sehen. Band und Frequenz (QRG) wählt der jeweilige Operator frei. Bandangaben im Kalender sind Planungen und können sich ändern.</p></details>
         <details><summary data-de="Gibt es spontane Aktivierungen?" data-en="Are spontaneous activations possible?">Gibt es spontane Aktivierungen?</summary><p data-de="Ja. Vom &lt;strong&gt;1. Januar bis 31. Dezember 2027&lt;/strong&gt; sind auch kurzfristige Aktivierungen möglich, die nicht im Kalender stehen. Schau deshalb zusätzlich in die &lt;a href=&quot;#live&quot;&gt;Live-Anzeige&lt;/a&gt;." data-en="Yes. From &lt;strong&gt;1 January to 31 December 2027&lt;/strong&gt;, activations may also take place at short notice without a calendar entry. Check the &lt;a href=&quot;#live&quot;&gt;live activity display&lt;/a&gt; as well.">Ja. Vom <strong>1. Januar bis 31. Dezember 2027</strong> sind auch kurzfristige Aktivierungen möglich, die nicht im Kalender stehen. Schau deshalb zusätzlich in die <a href="#live">Live-Anzeige</a>.</p></details>
@@ -310,6 +350,22 @@
   </main>
 
   <footer><div class="footer-call">DL1250PB</div><div><p data-de="1250 JAHRE PADERBORN" data-en="1250 YEARS OF PADERBORN">1250 JAHRE PADERBORN</p><p data-de="AMATEURFUNK · VERBINDET" data-en="AMATEUR RADIO · CONNECTS">AMATEURFUNK · VERBINDET</p></div><div class="footer-links"><a href="#amateurfunk" data-de="Amateurfunk kennenlernen" data-en="Discover amateur radio">Amateurfunk kennenlernen</a><a href="#aktuelles" data-de="Aktuelles" data-en="News">Aktuelles</a><a href="https://www.paderborn1250.de/de/" data-href-de="https://www.paderborn1250.de/de/" data-href-en="https://www.paderborn1250.de/en/" target="_blank" rel="noopener">Paderborn 1250 ↗</a><a href="https://www.darc.de/der-club/distrikte/n/ortsverbaende/61/" target="_blank" rel="noopener">DARC N61 ↗</a><a href="impressum.html" rel="nofollow" data-de="Impressum" data-en="Legal notice">Impressum</a><a href="datenschutz.html" rel="nofollow" data-de="Datenschutz" data-en="Privacy">Datenschutz</a><a href="#top" data-de="Nach oben ↑" data-en="Back to top ↑">Nach oben ↑</a></div><p class="copyright">© 2026 DL1250PB · <span data-de="Diese Webseite wurde mit Hilfe von KI erstellt." data-en="This website was created with the help of AI.">Diese Webseite wurde mit Hilfe von KI erstellt.</span></p></footer>
-  <script src="script.js?v=20261023-seo-visitors"></script>
+  <dialog class="gallery-lightbox" id="gallery-lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-toolbar">
+      <p class="lightbox-counter" id="lightbox-counter"></p>
+      <div class="lightbox-controls">
+        <button type="button" class="lightbox-prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span class="lightbox-sr-only" data-de="Vorheriges Bild" data-en="Previous image">Vorheriges Bild</span></button>
+        <button type="button" class="lightbox-next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg><span class="lightbox-sr-only" data-de="Nächstes Bild" data-en="Next image">Nächstes Bild</span></button>
+        <button type="button" class="lightbox-close" autofocus><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg><span class="lightbox-close-label" data-de="Schließen" data-en="Close">Schließen</span></button>
+      </div>
+    </div>
+    <figure class="lightbox-figure">
+      <div class="lightbox-image-wrap"><p id="lightbox-image-state" role="status"></p><img id="lightbox-image" alt="" hidden></div>
+      <figcaption class="lightbox-caption"><h2 id="lightbox-title"></h2><p id="lightbox-description"></p><a id="lightbox-source" target="_blank" rel="noopener"></a></figcaption>
+    </figure>
+    <p class="lightbox-sr-only" id="lightbox-announcement" role="status" aria-live="polite"></p>
+  </dialog>
+  <script src="script.js?v=20261024-gallery-fit"></script>
+  <script src="lightbox.js?v=20261024-gallery-lightbox"></script>
 </body>
 </html>

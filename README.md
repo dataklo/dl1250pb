@@ -20,7 +20,10 @@ Anschließend `http://localhost:8080` öffnen.
 - Der DN9DKN-OQRS-Link steht im Abschnitt `#qsl`.
 - Die Operatoren werden als Karten im Element `#operator-list` in `index.html` gepflegt.
 - Die Clubstationen stehen als Karten im gleichen Design direkt darunter in `#clubstation-list`. Bänder und Betriebsarten nur ergänzen, wenn sie für die jeweilige Station bekannt sind.
+- Beide Clubstationen verwenden den einheitlichen Hinweis „Anmeldung per E-Mail erwünscht“. DL0PS ist gelegentlich auch außerhalb der regulären Abende besetzt; Besuche sind dann nach vorheriger Anmeldung und Absprache möglich.
+- Der OV-Abend steht als eigene Karte bei den Clubstationen: jeden zweiten Mittwoch im Monat ab 20:00 Uhr Ortszeit bei Schinken Willi, ohne Anmeldung. Für Fragen ist `qso@dl1250pb.de` angegeben.
 - Besuchszeiten und Anmeldung stehen in den Clubstationskarten: DL0PS jeden zweiten und vierten Mittwoch im Monat ca. 17:30–20:20 Uhr, DL0HNF dienstags 17:00–19:00 Uhr. Diese Zeiten sind ausdrücklich Ortszeit, während der Aktivierungskalender UTC verwendet. Die festen Besuchszeiten werden nicht in den extern gepflegten ICS-Kalender geschrieben.
+- Die öffentlichen Treffpunkte sind in den Stationskarten und strukturierten Daten hinterlegt: DL0HNF, Fürstenallee 7, 33102 Paderborn; DL0PS, Kreuzung Hermann-Kirchhoff-Straße / Taubenweg, 33102 Paderborn. Die Adressen sind mit Kartenansichten verlinkt.
 - Der Einstieg für Interessierte ohne Funkwissen steht in `#amateurfunk`, mit kurzen Erklärungen und einem aufklappbaren Funklexikon. Die technischen Angaben für Funkamateure bleiben in Kalender, Live-Bereich und QSL-Informationen.
 - Die QSL-Angaben stehen im Abschnitt `#qsl`; die nicht indexierbare Anschrift steht in `qsl-address.html`.
 - Deutsche und englische Texte werden über `data-de` und `data-en` direkt an den jeweiligen Elementen gepflegt.
@@ -30,8 +33,10 @@ Anschließend `http://localhost:8080` öffnen.
 - Ein Kalendereintrag legt kein Band und keine QRG fest: Der jeweilige Operator wählt beides frei. Angaben in der Beschreibung dienen der Planung und können sich ändern.
 - Die Übersicht `#next-activation` am Seitenanfang verwendet dieselbe ICS-Quelle und zeigt einen laufenden Kalendereintrag oder die nächste geplante Aktivierung. Abgelaufene und abgesagte Termine werden nicht als nächste Aktivierung ausgewählt; ein laufender Kalendereintrag ist keine Live-On-Air-Bestätigung.
 - Uhrzeiten werden nach UTC umgerechnet und entsprechend beschriftet. `TZID`-Angaben wie `Europe/Berlin` berücksichtigen Sommer- und Winterzeit; für Termine ohne Zeitzonenangabe gilt `X-WR-TIMEZONE` oder standardmäßig `Europe/Berlin`. Ganztägige Termine erscheinen als „Ganztägig“.
-- Der Bildslider im Jubiläumsbereich steht in `.city-gallery-track` in `index.html`. Für weitere Bilder ein `figure.city-slide` ergänzen: Bild unter `img/` ablegen und Dateipfad, Alternativtexte, Bildtitel und Quellenlink anpassen. Die Pfeilbedienung berücksichtigt alle Karten automatisch; Wischen und die Pfeiltasten bei fokussiertem Slider sind ebenfalls möglich.
-- Die Sliderbilder erhalten die gleiche Höhe wie die QSL-Karte; ihre Breite ergibt sich aus dem jeweiligen Seitenverhältnis. Die Bilder werden weder beschnitten noch gestreckt.
+- Der Bildslider im Jubiläumsbereich steht in `.city-gallery-track` in `index.html`. Für weitere Bilder ein `figure.city-slide` ergänzen: Bild unter `img/` ablegen und Dateipfad, Alternativtexte, Bildtitel und Quellenlink anpassen. Die tatsächlichen Bildmaße als `width` und `height` angeben, damit schon vor dem Laden Platz für das Foto reserviert wird. Die Pfeilbedienung berücksichtigt alle Karten automatisch; Wischen und die Pfeiltasten bei fokussiertem Slider sind ebenfalls möglich.
+- Die Sliderbilder erhalten maximal die Höhe der QSL-Karte; ihre Breite ergibt sich aus dem jeweiligen Seitenverhältnis. Auf schmalen Displays werden Bilder samt Bildtext auf die verfügbare Galeriebreite begrenzt. Die Bilder werden dabei proportional verkleinert und weder beschnitten noch gestreckt.
+- Ein Klick auf ein Galeriebild öffnet eine Großansicht mit Bildtext und Quellenlink. Pfeiltasten oder die Dialogpfeile wechseln das Bild; Escape, Schließen oder ein Klick außerhalb schließen die Ansicht. Der Fokus kehrt zum geöffneten Bild zurück.
+- Für spätere optimierte Dateien kann ein Galeriebild optional `data-full-src="img/grossansicht.webp"` verwenden. Ohne dieses Attribut verwendet die Großansicht dieselbe Bilddatei wie die Galerie. Weitere statisch ergänzte `figure.city-slide` werden automatisch berücksichtigt.
 - Die kurzen Bildtexte stehen jeweils in der `figcaption` unter dem Foto. Die verlinkten Wikipedia-Artikel dienen als weiterführende Quellen.
 - Die drei datierten Meldungen in `#aktuelles` werden in `index.html` gepflegt. Neue Beiträge mit einem tatsächlichen Veröffentlichungsdatum, überprüfbaren Angaben und deutscher sowie englischer Fassung ergänzen.
 - Die bestätigte Hauptadresse ist `https://dl1250pb.de/`. Canonical-Link, Sitemap, strukturierte Daten und Vorschaubilder verwenden diese Adresse. Bei einem Domainwechsel alle Angaben zusammen anpassen.
@@ -48,6 +53,8 @@ Für die Website werden nur diese Dateien benötigt:
 - `index.html`
 - `styles.css`
 - `gallery.css`
+- `lightbox.css`
+- `lightbox.js`
 - `info.css`
 - `activation.css`
 - `content.css`
