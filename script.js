@@ -267,9 +267,21 @@ const cityTrack = document.querySelector('.city-gallery-track');
 const qslImage = document.querySelector('.qsl-card-image');
 
 function syncCityImageHeight() {
-  cityGallery.style.setProperty('--city-image-height', getComputedStyle(qslImage).height);
+  const height = parseFloat(getComputedStyle(qslImage).height);
+  cityGallery.style.setProperty('--city-image-height', `${height}px`);
+  cityTrack.querySelectorAll('.city-slide').forEach((slide) => {
+    const image = slide.querySelector('img');
+    if (!image) return;
+    // Width/height attributes reserve space before a lazy image has loaded.
+    const width = image.naturalWidth || Number(image.getAttribute('width'));
+    const imageHeight = image.naturalHeight || Number(image.getAttribute('height'));
+    if (width > 0 && imageHeight > 0) {
+      slide.style.setProperty('--city-image-width', `${height * width / imageHeight}px`);
+    }
+  });
 }
 
+cityTrack.querySelectorAll('img').forEach((image) => image.addEventListener('load', syncCityImageHeight));
 new ResizeObserver(syncCityImageHeight).observe(qslImage);
 syncCityImageHeight();
 

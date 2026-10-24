@@ -64,16 +64,17 @@
 
 .city-slide {
   flex: 0 0 auto;
-  width: max-content;
+  width: var(--city-image-width, 100%);
+  max-width: 100%;
   margin: 0;
   scroll-snap-align: start;
 }
 
 .city-slide img {
   display: block;
-  height: var(--city-image-height, 370px);
-  width: auto;
-  max-width: none;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
   background: var(--mint);
 }
 
