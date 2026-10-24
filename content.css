@@ -171,7 +171,7 @@
 }
 
 .operator-grid .clubstation {
-  flex-basis: clamp(300px, 34vw, 460px);
+  flex-basis: clamp(300px, calc((100% - 44px) / 3), 460px);
 }
 
 .clubstation .clubstation-hours {
@@ -257,4 +257,9 @@
   .operator-grid .clubstation {
     flex-basis: min(82vw, 320px);
   }
+}
+
+.operator-grid .ov-evening-place {
+  margin: -8px 0 22px;
+  font-weight: 600;
 }
